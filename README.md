@@ -11,16 +11,16 @@ what is published.
 ## Build
 
 ```bash
-quarto render slides.qmd     # produces slides.html
-quarto preview slides.qmd    # live-reloading preview
+quarto render index.qmd     # produces index.html
+quarto preview index.qmd    # live-reloading preview
 ```
 
-Open `slides.html` in a browser. Press `S` for speaker notes, `F` for
+Open `index.html` in a browser. Press `S` for speaker notes, `F` for
 fullscreen, `E`/`?print-pdf` then browser-print for a PDF export.
 
 ## Files
 
-- `slides.qmd` — the presentation source
+- `index.qmd` — the presentation source
 - `konstanz.scss` — University of Konstanz reveal.js theme
 - `assets/UniKonstanz_Logo.png` — official logo (cover slide)
 - `assets/footer.html` — per-slide citation-footer script

@@ -1,8 +1,6 @@
-# Quarto render artifacts
+# Quarto caches / scratch (the rendered site IS committed for GitHub Pages)
 /.quarto/
-/slides_files/
-slides.html
 *_cache/
 .Rproj.user/
-.DS_Store
 .Rhistory
+.DS_Store
