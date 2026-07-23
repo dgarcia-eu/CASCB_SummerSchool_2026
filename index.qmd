@@ -298,7 +298,7 @@ Users split by emotional expression two weeks after the attacks:
 
 ## WHAT-IF: social simulation with generative ABM {footer="WHAT-IF · HORIZON project · dgarcia.eu"}
 
-![](figures/WHAT-IF.png){.r-stretch fig-align="center"}
+![](figures/WHAT-IF.svg){.r-stretch fig-align="center"}
 
 Equipping agent-based models with **language** (LLMs) to simulate online social systems — a *wind tunnel* for social media.
 
