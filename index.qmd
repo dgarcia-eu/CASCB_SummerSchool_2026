@@ -112,6 +112,8 @@ A **complex system** is composed of many particles that interact following force
 ![](figures/SA-pipeline.png){.tallfig fig-align="center"}
 :::
 ::: {.column width="60%"}
+![](figures/communication.png){.memepair fig-align="center"}
+
 ::: {.roomy}
 - Current sentiment analysis assumes the **ground truth** is an annotation by **a reader** — a student or crowdworker
 
