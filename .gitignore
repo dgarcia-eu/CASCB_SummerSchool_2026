@@ -5,3 +5,4 @@ slides.html
 *_cache/
 .Rproj.user/
 .DS_Store
+.Rhistory
