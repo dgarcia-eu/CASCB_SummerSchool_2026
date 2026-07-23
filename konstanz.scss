@@ -1,0 +1,212 @@
+/*-- scss:defaults --*/
+// ===========================================================================
+// University of Konstanz corporate-design theme for reveal.js (Quarto)
+// Primary color: Seeblau #59C7EB · Palette from the official corporate design
+// ===========================================================================
+
+// --- Corporate palette (unikn) ---
+$seeblau:       #59C7EB;   // primary
+$seeblau-dark:  #008ECE;   // seeblau5
+$seeblau-pale:  #CCEEF9;   // seeblau1
+$petrol:        #077187;
+$seegruen:      #0A9086;
+$karpfenblau:   #3E5496;
+$bordeaux:      #8E2043;
+$peach:         #FEA090;
+$pinky:         #E0607E;
+$signal:        #EFDC60;
+$grau:          #9AA0A7;
+$schwarz:       #212020;
+$weiss:         #FFFFFF;
+
+// --- Fonts ---
+$font-family-sans-serif: "Helvetica Neue", "Segoe UI", Arial, sans-serif !default;
+$presentation-font-size-root: 30px !default;
+$presentation-heading-font: $font-family-sans-serif !default;
+$presentation-heading-font-weight: 600 !default;
+$presentation-line-height: 1.35 !default;
+
+// --- Core colors ---
+$body-bg:    $weiss !default;
+$body-color: $schwarz !default;
+$link-color: $petrol !default;
+$link-color-hover: $seeblau-dark !default;
+$selection-bg: $seeblau !default;
+
+// --- Headings ---
+$presentation-heading-color: $schwarz !default;
+
+/*-- scss:rules --*/
+
+.reveal {
+  font-weight: 300;
+  letter-spacing: 0.1px;
+}
+
+// --- Headings: black with a Seeblau underline accent ---
+.reveal h1, .reveal h2, .reveal h3 {
+  color: $schwarz;
+  text-transform: none;
+  line-height: 1.15;
+}
+.reveal h2 {
+  font-size: 1.5em;
+  border-bottom: 4px solid $seeblau;
+  padding-bottom: 0.15em;
+  margin-bottom: 0.5em;
+}
+.reveal h3 { color: $petrol; font-size: 1.15em; }
+
+// --- Links & emphasis ---
+.reveal a { color: $petrol; text-decoration: none; border-bottom: 1px solid rgba($petrol, 0.35); }
+.reveal a:hover { color: $seeblau-dark; }
+.reveal strong, .reveal b { color: $petrol; font-weight: 600; }
+
+// --- Bulleted lists: Seeblau markers ---
+.reveal ul { list-style: none; margin-left: 1em; }
+.reveal ul li { position: relative; margin-bottom: 0.35em; }
+.reveal ul li::before {
+  content: "";
+  position: absolute;
+  left: -0.95em; top: 0.55em;
+  width: 0.42em; height: 0.42em;
+  background: $seeblau;
+}
+.reveal ul ul li::before { background: $grau; }
+
+// ==========================================================================
+//  TITLE (cover) slide
+// ==========================================================================
+#title-slide, .reveal .title-slide {
+  text-align: left;
+}
+#title-slide .title {
+  color: $schwarz;
+  font-size: 1.7em;
+  font-weight: 600;
+  line-height: 1.12;
+  border-bottom: 6px solid $seeblau;
+  padding-bottom: 0.35em;
+  margin-bottom: 0.4em;
+}
+#title-slide .subtitle {
+  color: $petrol;
+  font-size: 1.0em;
+  font-weight: 400;
+  margin-top: 0.2em;
+}
+#title-slide .author, #title-slide .quarto-title-authors {
+  color: $schwarz;
+  font-size: 0.85em;
+  margin-top: 0.6em;
+}
+#title-slide .date { color: $grau; font-size: 0.7em; margin-top: 0.4em; }
+
+// (Cover logo is placed via `title-slide-attributes` in the qmd, whose path
+//  resolves relative to the document root — reliable regardless of SCSS nesting.)
+
+// ==========================================================================
+//  Section-divider slides (class .divider on a heading)
+// ==========================================================================
+.reveal .slide.divider {
+  background: $seeblau;
+}
+.reveal .slide.divider h1,
+.reveal .slide.divider h2,
+.reveal .slide.divider h3 {
+  color: $weiss;
+  border-bottom: none;
+}
+.reveal .slide.divider p { color: rgba($weiss, 0.9); }
+
+// ==========================================================================
+//  Per-slide footer (paper citation)  &  slide number
+// ==========================================================================
+.reveal .footer {
+  color: $grau;
+  font-size: 15px;
+  font-weight: 300;
+  border-top: 1px solid rgba($grau, 0.4);
+  padding-top: 4px;
+  width: 92%;
+  left: 4%;
+  bottom: 8px;
+  text-align: left;
+}
+.reveal .footer a { color: $grau; border-bottom: none; }
+.reveal .slide-number { background: transparent; color: $grau; font-size: 0.6em; }
+
+// Custom per-slide citation footer (populated by assets/footer.html)
+#ukn-footer {
+  position: fixed;
+  left: 4%;
+  bottom: 10px;
+  width: 92%;
+  z-index: 30;
+  color: $grau;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.3;
+  border-top: 1px solid rgba($grau, 0.4);
+  padding-top: 4px;
+  text-align: left;
+  pointer-events: none;
+}
+#ukn-footer a { color: $grau; border-bottom: none; }
+// Hide Quarto's own default footer if it ever renders
+.reveal .footer.footer-default { display: none !important; }
+
+// A small Seeblau tab in the top-left of every content slide
+.reveal .slides > section::before,
+.reveal .slides > section > section::before { }
+
+// ==========================================================================
+//  Tables (used heavily by the LEIA benchmark slides)
+// ==========================================================================
+.reveal table { font-size: 0.72em; border-collapse: collapse; margin: 0.3em auto; }
+.reveal table th {
+  background: $seeblau;
+  color: $schwarz;
+  font-weight: 600;
+  border: none;
+  padding: 0.25em 0.55em;
+}
+.reveal table td { border-bottom: 1px solid rgba($grau, 0.35); padding: 0.2em 0.55em; }
+.reveal table tr:last-child td { border-bottom: 2px solid $grau; }
+
+// ==========================================================================
+//  Utility layout helpers
+// ==========================================================================
+.reveal .callout-tip, .reveal .highlight-box {
+  background: $seeblau-pale;
+  border-left: 6px solid $seeblau;
+  padding: 0.5em 0.8em;
+  margin: 0.4em 0;
+}
+.reveal .takeaway {
+  background: $seeblau-pale;
+  border-left: 6px solid $petrol;
+  padding: 0.45em 0.8em;
+  font-weight: 500;
+}
+.reveal .smaller { font-size: 0.8em; }
+.reveal .muted { color: $grau; }
+.reveal .center { text-align: center; }
+
+// Figures
+.reveal .slide img { background: transparent; border: none; box-shadow: none; }
+.reveal figcaption { color: $grau; font-size: 0.6em; }
+
+// Columns spacing
+.reveal .columns { align-items: center; }
+
+// Fit figures inside columns so tall images never overflow the slide.
+// width/height auto + max-width/height preserve aspect ratio and clamp to the
+// available content box (720px slide minus header & citation footer).
+.reveal .columns img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 540px !important;
+  object-fit: contain;
+}

@@ -1,0 +1,7 @@
+# Quarto render artifacts
+/.quarto/
+/slides_files/
+slides.html
+*_cache/
+.Rproj.user/
+.DS_Store

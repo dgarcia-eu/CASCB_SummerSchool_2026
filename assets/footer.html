@@ -1,0 +1,43 @@
+<script>
+// Per-slide paper-citation footer.
+// Quarto stores `{footer="..."}` as a data-footer attribute but its support
+// plugin only renders footers that are .footer child divs; this bridges the
+// attribute to a single fixed footer element, updated on every slide change.
+(function () {
+  var DEFAULT_FOOTER = "David Garcia · CASCB Summer School 2026";
+  function ensureFooterEl() {
+    var el = document.getElementById("ukn-footer");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "ukn-footer";
+      var reveal = document.querySelector(".reveal");
+      (reveal || document.body).appendChild(el);
+    }
+    return el;
+  }
+  function currentFooterText(slide) {
+    if (!slide) return DEFAULT_FOOTER;
+    var v = slide.getAttribute("data-footer");
+    if (v === "false") return "";                 // explicit no-footer
+    if (v && v.trim().length) return v;           // per-slide citation
+    // Divider (section-title) slides carry no footer text.
+    if (slide.classList.contains("divider")) return "";
+    return DEFAULT_FOOTER;
+  }
+  function update(slide) {
+    var el = ensureFooterEl();
+    var txt = currentFooterText(slide);
+    el.innerHTML = txt;
+    el.style.display = txt ? "block" : "none";
+  }
+  function init() {
+    if (!window.Reveal) { setTimeout(init, 60); return; }
+    var deck = window.Reveal;
+    var apply = function () { update(deck.getCurrentSlide()); };
+    if (deck.isReady && deck.isReady()) { apply(); }
+    deck.on("ready", apply);
+    deck.on("slidechanged", function (ev) { update(ev.currentSlide); });
+  }
+  document.addEventListener("DOMContentLoaded", init);
+})();
+</script>
