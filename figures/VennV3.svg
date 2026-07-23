@@ -142,17 +142,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-18.326346,-37.766959)">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:8.46667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.212604"
-       x="48.644924"
-       y="47.261856"
-       id="text872"><tspan
-         sodipodi:role="line"
-         id="tspan870"
-         x="48.644924"
-         y="47.261856"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#507c5c;stroke-width:0.212604">Bridging Disciplines in CSS</tspan></text>
+    <!-- embedded title removed; slide heading now provides it -->
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.093483;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect826-3"

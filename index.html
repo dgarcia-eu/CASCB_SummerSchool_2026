@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="David Garcia">
-  <title>Collective Behavior: From Digital Traces to Generative Agents</title>
+  <title>Online Collective Behavior: From Digital Traces to Generative Agents</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-fe9048946e9178e4808697c168439e9e.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-cc21cae438965cc18982a02b640c63d4.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -127,7 +127,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="assets/UniKonstanz_Logo.png" data-background-position="94% 7%" data-background-repeat="no-repeat" data-background-size="300px" class="quarto-title-block center">
-  <h1 class="title">Collective Behavior: From Digital Traces to Generative Agents</h1>
+  <h1 class="title">Online Collective Behavior: From Digital Traces to Generative Agents</h1>
   <p class="subtitle">Computational Social Science of collective emotions and AI agents</p>
 
 <div class="quarto-title-authors">
@@ -142,6 +142,21 @@ David Garcia
 </div>
 
   <p class="date">CASCB Summer School 2026</p>
+</section>
+<section id="the-social-data-science-lab" class="slide level2 about-slide" data-background-image="figures/AboutUS.svg" data-background-size="contain" data-background-color="#FFFFFF" data-footer="false">
+<h2>The Social Data Science Lab</h2>
+</section>
+<section id="overview" class="slide level2" data-footer="false">
+<h2>Overview</h2>
+<p>This talk covers four topics:</p>
+<div class="overview-list">
+<ol type="1">
+<li><strong>Introduction to Computational Social Science</strong> <span class="muted">what it is, and why complexity matters</span></li>
+<li><strong>Collective emotions on social media</strong> <span class="muted">measuring affect from the micro to the macro level</span></li>
+<li><strong>Generative agents</strong> <span class="muted">simulating online social systems with LLMs</span></li>
+<li><strong>AI agents</strong> <span class="muted">the collective behavior of AI itself</span></li>
+</ol>
+</div>
 </section>
 <section>
 <section id="introduction-to-computational-social-science" class="title-slide slide level1 divider center">
@@ -164,8 +179,8 @@ David Garcia
 <h2>The Hype Cycle of Computational Social Science</h2>
 
 <img data-src="figures/Hype3.svg" class="r-stretch quarto-figure quarto-figure-center"></section>
-<section id="the-four-circles-of-computational-social-science" class="slide level2" data-footer="Social Data Science Lab · University of Konstanz">
-<h2>The Four Circles of Computational Social Science</h2>
+<section id="bridging-disciplines-in-css" class="slide level2" data-footer="Social Data Science Lab · University of Konstanz">
+<h2>Bridging Disciplines in CSS</h2>
 
 <img data-src="figures/VennV3.svg" class="r-stretch quarto-figure quarto-figure-center"></section>
 <section id="collective-behavior-more-is-different" class="slide level2" data-footer="P. W. Anderson, More is different, Science (1972)">
@@ -176,7 +191,7 @@ David Garcia
 <p>A <strong>complicated system</strong> has many pieces with specific functions and well-defined relationships. It has been carefully <strong>engineered or designed</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/Cogs.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+<p><img data-src="figures/Cogs.jpg" class="figcap quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -184,7 +199,7 @@ David Garcia
 <p>A <strong>complex system</strong> is composed of many particles that interact following forces or dynamics. Its behavior follows from <strong>natural principles</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/network.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+<p><img data-src="figures/network.png" class="figcap quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div></div>
@@ -197,31 +212,24 @@ David Garcia
 <section id="the-micromacro-gap-of-collective-emotions" class="slide level2" data-footer="F. Schweitzer &amp; D. Garcia, An agent-based model of collective emotions in online communities, Eur. Phys. J. B (2010)">
 <h2>The micro–macro gap of collective emotions</h2>
 <div class="columns">
-<div class="column" style="width:52%;">
+<div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/ABM.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/ABM.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:48%;">
+</div><div class="column" style="width:50%;">
 <ul>
-<li><strong>Macro:</strong> collective emotions — waves of shared affect that rise, spread, and fade across a community</li>
+<li><strong>Macro:</strong> collective emotions — shared affect that rises, spreads, and fades across a community</li>
 <li><strong>Micro:</strong> individuals feeling, expressing, and reacting to each other’s emotions</li>
-<li>The <strong>gap:</strong> how do individual emotional dynamics <em>add up</em> to collective patterns?</li>
+<li>The <strong>gap:</strong> how do individual dynamics <em>add up</em> to collective patterns?</li>
 </ul>
-<div class="takeaway">
-<p><strong>Agent-based modelling</strong> links micro-level rules to macro-level phenomena — but it needs a way to <em>measure</em> emotions at both levels.</p>
-</div>
-</div></div>
-</section>
-<section id="two-measurement-problems" class="slide level2">
-<h2>Two measurement problems</h2>
-<p>To close the micro–macro gap, we need to measure emotions at two levels:</p>
+<p><strong>Agent-based modelling</strong> links the two — but we must <em>measure</em> emotions at both levels:</p>
 <ul>
-<li><strong>Microscopic</strong> — detect the emotion of a <em>single</em> text as accurately as possible → <strong>LEIA</strong></li>
-<li><strong>Macroscopic</strong> — track the emotional state of a <em>whole society</em> over time → <strong>social media macroscopes</strong></li>
+<li><strong>Microscopic</strong> → a single text: <strong>LEIA</strong></li>
+<li><strong>Macroscopic</strong> → a whole society: <strong>macroscopes</strong></li>
 </ul>
-<p>We first look at the microscope, then the macroscope, then a real collective-emotion event: the <strong>Paris attacks of 2015</strong>.</p>
+</div></div>
 </section></section>
 <section>
 <section id="a.-microscopic-measurement-leia" class="title-slide slide level1 divider center">
@@ -231,13 +239,13 @@ David Garcia
 <section id="the-state-of-the-practice-sentiment-pipeline" class="slide level2" data-footer="LEIA: Linguistic Embeddings for the Identification of Affect · Aroyehun et al., EPJ Data Science (2023)">
 <h2>The state-of-the-practice sentiment pipeline</h2>
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:52%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/SA-pipeline.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/SA-pipeline.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:48%;">
 <ul>
 <li>Current sentiment analysis assumes the <strong>ground truth</strong> is an annotation by <strong>a reader</strong> — a student or crowdworker</li>
 <li>Noise in the ground truth creates <strong>unmeasured error</strong> and potential biases</li>
@@ -248,13 +256,13 @@ David Garcia
 <section id="vent-leia-learning-self-annotated-emotions" class="slide level2" data-footer="LEIA: Linguistic Embeddings for the Identification of Affect · Aroyehun et al., EPJ Data Science (2023)">
 <h2>Vent + LEIA: learning self-annotated emotions</h2>
 <div class="columns">
-<div class="column" style="width:48%;">
+<div class="column" style="width:46%;">
 <p><strong>Vent</strong>: a social network where users tag each post with their own emotion — self-annotated affect at scale (&gt;6M training posts).</p>
 <p><strong>LEIA</strong> — Linguistic Embeddings for the Identification of Affect: a transformer fine-tuned on Vent for Sadness, Anger, Fear, Affection, Happiness.</p>
-</div><div class="column" style="width:52%;">
+</div><div class="column" style="width:54%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/LEIA-Schema.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/LEIA-Schema.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div></div>
@@ -265,7 +273,7 @@ David Garcia
 <div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/LEIA1.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/LEIA1.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div><div class="column" style="width:45%;">
@@ -339,7 +347,7 @@ David Garcia
 <section id="leia-vs.-humans" class="slide level2" data-footer="LEIA vs. humans — C. Metz, MSc thesis, University of Konstanz (in preparation, unpublished)">
 <h2>LEIA vs.&nbsp;humans</h2>
 <div class="columns">
-<div class="column" style="width:46%;">
+<div class="column" style="width:44%;">
 <p>Full experiment on Prolific:</p>
 <ul>
 <li>1,000 Vent posts, <strong>5 annotations each</strong>, 200 participants</li>
@@ -348,16 +356,16 @@ David Garcia
 <li><strong>Only 13%</strong> of annotators do better than LEIA</li>
 <li>Humans given LEIA improve — but stay below LEIA alone</li>
 </ul>
-</div><div class="column" style="width:54%;">
+<div class="muted" style="font-size:0.7em">
+<p>Results still to be published (C. Metz, master thesis).</p>
+</div>
+</div><div class="column" style="width:56%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/LEIAvsHumans2.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/LEIAvsHumans2.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div></div>
-<div class="muted" style="font-size:0.6em">
-<p>Note: the human-comparison results are still to be published (Claire’s master thesis).</p>
-</div>
 </section></section>
 <section>
 <section id="b.-macroscopic-measurement-of-emotions-online" class="title-slide slide level1 divider center">
@@ -367,13 +375,13 @@ David Garcia
 <section id="do-social-media-macroscopes-work" class="slide level2" data-footer="Social media emotion macroscopes reflect emotional experiences in society at large · Garcia et al., arXiv:2107.13236 (2021)">
 <h2>Do social media macroscopes work?</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column" style="width:42%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/earth.svg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+<p><img data-src="figures/earth.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:55%;">
+</div><div class="column" style="width:58%;">
 <p>A <strong>macroscope</strong> aggregates millions of texts into a daily emotional signal for a whole society. Four concerns:</p>
 <ol type="1">
 <li>Representation issues</li>
@@ -389,19 +397,35 @@ David Garcia
 
 <img data-src="figures/MacroTest2.svg" class="r-stretch quarto-figure quarto-figure-center"><p>Twitter emotion time series track UK YouGov mood surveys (sadness, anxiety, joy), <span class="math inline">\(r \approx 0.65\)</span>.</p>
 </section>
+<section id="twitter-and-surveys-move-together" class="slide level2" data-footer="Social media emotion macroscopes reflect emotional experiences in society at large · Garcia et al., arXiv:2107.13236 (2021)">
+<h2>Twitter and surveys move together</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/Sadness.svg" class="tsstack quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/Anxiety.svg" class="tsstack quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="center smaller">
+<p>The macroscope series (blue) closely follow the <strong>YouGov survey</strong> series (red) — day-to-day agreement, not just monthly averages.</p>
+</div>
+</section>
 <section id="conceptual-validation-covid-19-and-emotions" class="slide level2" data-footer="Validating daily social media macroscopes of emotions · Pellert et al., Scientific Reports (2022)">
 <h2>Conceptual validation: COVID-19 and emotions</h2>
 <div class="columns">
-<div class="column" style="width:52%;">
+<div class="column" style="width:50%;">
 <ul>
 <li>Austrian daily macroscope: Der Standard forum + Austrian tweets, validated against a 20-day emotion survey (N=268,128)</li>
 <li><strong>Conceptual validation</strong>: COVID case numbers should elicit negative emotional experiences</li>
 <li>Comparable correlations for survey data and the Twitter macroscope</li>
 </ul>
-</div><div class="column" style="width:48%;">
+</div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/DS31.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/DS31.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div></div>
@@ -419,17 +443,17 @@ David Garcia
 <section id="emotional-responses-to-collective-traumas" class="slide level2" data-footer="Collective Emotions and Social Resilience in the Digital Traces After a Terrorist Attack · Garcia &amp; Rimé, Psychological Science (2019)">
 <h2>Emotional responses to collective traumas</h2>
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:52%;">
 <p><strong>How do societies respond to traumatic events? Is there a social function of collective emotions?</strong></p>
 <ul>
 <li>Emotional synchronization: simultaneous negative emotions</li>
 <li>Collective emotion lasts <strong>longer</strong> than individual reactions</li>
 <li>Those who participate show higher long-term <strong>solidarity</strong></li>
 </ul>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:48%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/Trauma.png" class="quarto-figure quarto-figure-center" style="width:85.0%"></p>
+<p><img data-src="figures/Trauma.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div></div>
@@ -440,7 +464,7 @@ David Garcia
 <div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/ParisCase.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/ParisCase.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div><div class="column" style="width:45%;">
@@ -452,16 +476,21 @@ David Garcia
 </ul>
 </div></div>
 </section>
+<section id="evidence-of-collective-emotions" class="slide level2" data-footer="Collective Emotions and Social Resilience in the Digital Traces After a Terrorist Attack · Garcia &amp; Rimé, Psychological Science (2019)">
+<h2>Evidence of collective emotions</h2>
+
+<img data-src="figures/TS.png" class="r-stretch quarto-figure quarto-figure-center"><p>A sharp spike in <strong>negative affect</strong> and <strong>anxiety</strong> right after the attack, decaying over the following weeks — a collective emotional response visible in the digital traces.</p>
+</section>
 <section id="emotions-and-prosocial-language" class="slide level2" data-footer="Collective Emotions and Social Resilience in the Digital Traces After a Terrorist Attack · Garcia &amp; Rimé, Psychological Science (2019)">
 <h2>Emotions and prosocial language</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column" style="width:48%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/TS3.png" class="quarto-figure quarto-figure-center" style="width:95.0%"></p>
+<p><img data-src="figures/TS3.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:55%;">
+</div><div class="column" style="width:52%;">
 <p>Users split by emotional expression two weeks after the attacks:</p>
 <ul>
 <li><strong>Social process</strong> terms: very similar <em>before</em>, strong difference <em>after</em>, lasting <strong>months</strong></li>
@@ -492,10 +521,11 @@ David Garcia
 
 <img data-src="figures/WHAT-IF.png" class="r-stretch quarto-figure quarto-figure-center"><p>Equipping agent-based models with <strong>language</strong> (LLMs) to simulate online social systems — a <em>wind tunnel</em> for social media.</p>
 </section>
-<section id="an-in-silico-approach-rag-not-llm-magic" class="slide level2" data-footer="WHAT-IF · HORIZON project · dgarcia.eu">
-<h2>An <em>in silico</em> approach: RAG, not LLM magic</h2>
+<section id="generative-abm-of-online-social-media" class="slide level2" data-footer="WHAT-IF · HORIZON project · dgarcia.eu">
+<h2>Generative ABM of online social media</h2>
 
-<img data-src="figures/InSilico.png" class="r-stretch quarto-figure quarto-figure-center"></section>
+<img data-src="figures/InSilico.png" class="r-stretch quarto-figure quarto-figure-center"><p>An <em>in silico</em> approach: agents ground their behavior in retrieved evidence (<strong>RAG</strong>) rather than relying on “LLM magic”.</p>
+</section>
 <section id="the-collective-turing-test" class="slide level2" data-footer="The Collective Turing Test: LLMs Can Generate Realistic Multi-User Discussions · Bouleimen et al., Scientific Reports (2026)">
 <h2>The Collective Turing Test</h2>
 
@@ -508,13 +538,13 @@ David Garcia
 <section id="result-humans-cannot-tell-the-difference" class="slide level2" data-footer="The Collective Turing Test: LLMs Can Generate Realistic Multi-User Discussions · Bouleimen et al., Scientific Reports (2026)">
 <h2>Result: humans cannot tell the difference</h2>
 <div class="columns">
-<div class="column" style="width:58%;">
+<div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/CTT-Results.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/CTT-Results.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:42%;">
+</div><div class="column" style="width:40%;">
 <ul>
 <li>Participants compare LLM-generated and human discussions</li>
 <li><strong>~50% success rate</strong> — indistinguishable from chance</li>
@@ -525,13 +555,13 @@ David Garcia
 <section id="ai4social-ai-as-an-interpolator-of-behavior" class="slide level2" data-footer="AI4SOCIAL+ · HORIZON project (BSC &amp; University of Konstanz)">
 <h2>AI4Social+: AI as an interpolator of behavior</h2>
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:58%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/AI4SOCIAL.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/AI4SOCIAL.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:42%;">
 <p><strong>AI4SOCIAL+</strong>: new HORIZON project including <strong>BSC</strong> and <strong>University of Konstanz</strong>.</p>
 <p>Using generative agents to <strong>interpolate</strong> human behavior — filling gaps between what we can measure and what we want to understand.</p>
 </div></div>
@@ -547,7 +577,7 @@ David Garcia
 <div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/conformity1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/conformity1.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div><div class="column" style="width:45%;">
@@ -565,7 +595,7 @@ David Garcia
 <div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/conformity2.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/conformity2.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div><div class="column" style="width:45%;">
@@ -580,13 +610,13 @@ David Garcia
 <section id="the-social-llm-hypothesis" class="slide level2" data-footer="AI agents can coordinate beyond human scale · de Marzo, Castellano, Garcia, arXiv:2409.02822 (2025)">
 <h2>The Social LLM Hypothesis</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:52%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/DunbarQuestion.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/DunbarQuestion.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:48%;">
 <ul>
 <li>Human group size depends on <strong>cognitive ability</strong> (Dunbar’s number, 150–250)</li>
 <li>Language is the tool that lets humans form larger groups</li>
@@ -601,13 +631,13 @@ David Garcia
 <section id="coordination-dynamics-in-llm-agents" class="slide level2" data-footer="AI agents can coordinate beyond human scale · de Marzo, Castellano, Garcia, arXiv:2409.02822 (2025)">
 <h2>Coordination dynamics in LLM agents</h2>
 <div class="columns">
-<div class="column" style="width:52%;">
+<div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/OP.png" class="quarto-figure quarto-figure-center" style="width:92.0%"></p>
+<p><img data-src="figures/OP.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:48%;">
+</div><div class="column" style="width:50%;">
 <ul>
 <li>N agents each start with a random opinion (<strong>A / B</strong>)</li>
 <li>Each step, an agent sees all others’ opinions and restates its own</li>
@@ -627,7 +657,7 @@ David Garcia
 <div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/Scaling.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/Scaling.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div><div class="column" style="width:45%;">
@@ -644,13 +674,13 @@ David Garcia
 <section id="ai-swarms-and-collective-misalignment" class="slide level2" data-footer="How Malicious AI Swarms Can Threaten Democracy · Schroeder et al., Science (2026)">
 <h2>AI swarms and collective misalignment</h2>
 <div class="columns">
-<div class="column" style="width:52%;">
+<div class="column" style="width:54%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/AI-society-5.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/AI-society-5.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:48%;">
+</div><div class="column" style="width:46%;">
 <p>When agents <strong>coordinate</strong> and <strong>conform</strong>, individually aligned agents can drift into a <strong>collectively misaligned</strong> state.</p>
 <p>A new frontier of information warfare: coordinated <strong>AI swarms</strong> amplifying and synchronizing opinions.</p>
 </div></div>
@@ -658,13 +688,13 @@ David Garcia
 <section id="conformity-generates-collective-misalignment" class="slide level2" data-footer="Conformity Generates Collective Misalignment in AI Agent Societies · De Marzo et al., arXiv:2605.10721 (2026)">
 <h2>Conformity generates collective misalignment</h2>
 <div class="columns">
-<div class="column" style="width:52%;">
+<div class="column" style="width:54%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/Misalignment1.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/Misalignment1.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:48%;">
+</div><div class="column" style="width:46%;">
 <ul>
 <li>Coordination paradigm on <strong>real issues</strong> (e.g.&nbsp;healthcare, taxation, immigration)</li>
 <li>The model has a preferred option — but a committed initial majority can lock the group into the <strong>opposite</strong> state</li>
@@ -675,13 +705,13 @@ David Garcia
 <section id="moltbook-the-reddit-of-ai-agents" class="slide level2" data-footer="Collective Behavior of AI Agents: the Case of Moltbook · De Marzo &amp; Garcia, arXiv:2602.09270 (2026)">
 <h2>Moltbook: the “Reddit of AI agents”</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column" style="width:46%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/Moltbook.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/Moltbook.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column" style="width:55%;">
+</div><div class="column" style="width:54%;">
 <ul>
 <li>Do AI agents produce behavioral structures <strong>similar to or different from</strong> humans?</li>
 <li>Do they influence each other under <strong>natural diversity</strong>?</li>
@@ -692,28 +722,23 @@ David Garcia
 <section id="moltbook-similar-structure-different-behavior" class="slide level2" data-footer="Collective Behavior of AI Agents: the Case of Moltbook · De Marzo &amp; Garcia, arXiv:2602.09270 (2026)">
 <h2>Moltbook: similar structure, different behavior</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:58%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/Moltbook1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+<p><img data-src="figures/Moltbook1.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 <p><strong>Similar:</strong> power-law comment distributions (exponents 1.5–1.8) from proportional growth.</p>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:42%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/Moltbook2.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+<p><img data-src="figures/Moltbook2.png" class="figcap quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 <p><strong>Different:</strong> humans prefer to <strong>vote</strong>; AI agents prefer to <strong>discuss</strong>.</p>
 </div></div>
-</section></section>
-<section>
-<section id="summary" class="title-slide slide level1 divider center">
-<h1>Summary</h1>
-
 </section>
-<section id="summary-1" class="slide level2" data-footer="www.dgarcia.eu · Bluesky @dgarcia.eu">
+<section id="summary" class="slide level2" data-footer="www.dgarcia.eu · Bluesky @dgarcia.eu">
 <h2>Summary</h2>
 <ul>
 <li><strong>Computational Social Science</strong> spans digital traces, computerized measurement, and generative models</li>
@@ -724,7 +749,9 @@ David Garcia
 <div class="takeaway">
 <p>From measuring human collective behavior to simulating it — and now to the collective behavior of AI itself.</p>
 </div>
-<h3 id="thank-you-david.garciauni-konstanz.de-www.dgarcia.eu">Thank you! — david.garcia@uni-konstanz.de · <a href="https://dgarcia.eu">www.dgarcia.eu</a></h3>
+<div class="thankyou">
+<p><strong>Thank you!</strong> — david.garcia@uni-konstanz.de · <a href="https://dgarcia.eu">www.dgarcia.eu</a></p>
+</div>
 
 </section></section>
     </div>

@@ -1,5 +1,5 @@
 ---
-title: "Collective Behavior: From Digital Traces to Generative Agents"
+title: "Online Collective Behavior: From Digital Traces to Generative Agents"
 subtitle: "Computational Social Science of collective emotions and AI agents"
 author: "David Garcia"
 institute: "Social Data Science Lab · University of Konstanz"
@@ -25,6 +25,23 @@ title-slide-attributes:
   data-background-repeat: "no-repeat"
 ---
 
+## The Social Data Science Lab {background-image="figures/AboutUS.svg" background-size="contain" background-color="#FFFFFF" data-footer="false" .about-slide}
+
+## Overview {footer="false"}
+
+This talk covers four topics:
+
+::: {.overview-list}
+1. **Introduction to Computational Social Science**
+   <span class="muted">what it is, and why complexity matters</span>
+2. **Collective emotions on social media**
+   <span class="muted">measuring affect from the micro to the macro level</span>
+3. **Generative agents**
+   <span class="muted">simulating online social systems with LLMs</span>
+4. **AI agents**
+   <span class="muted">the collective behavior of AI itself</span>
+:::
+
 # 1. Introduction to Computational Social Science {.divider}
 
 ## *Computational* in Computational Social Science
@@ -43,7 +60,7 @@ This talk moves through all three: **digital traces** → **computerized measure
 
 ![](figures/Hype3.svg){.r-stretch fig-align="center"}
 
-## The Four Circles of Computational Social Science {footer="Social Data Science Lab · University of Konstanz"}
+## Bridging Disciplines in CSS {footer="Social Data Science Lab · University of Konstanz"}
 
 ![](figures/VennV3.svg){.r-stretch fig-align="center"}
 
@@ -54,13 +71,13 @@ This talk moves through all three: **digital traces** → **computerized measure
 ### Complicated
 A **complicated system** has many pieces with specific functions and well-defined relationships. It has been carefully **engineered or designed**.
 
-![](figures/Cogs.jpg){width="70%" fig-align="center"}
+![](figures/Cogs.jpg){.figcap fig-align="center"}
 :::
 ::: {.column width="50%"}
 ### Complex
 A **complex system** is composed of many particles that interact following forces or dynamics. Its behavior follows from **natural principles**.
 
-![](figures/network.png){width="70%" fig-align="center"}
+![](figures/network.png){.figcap fig-align="center"}
 :::
 ::::
 
@@ -69,38 +86,30 @@ A **complex system** is composed of many particles that interact following force
 ## The micro–macro gap of collective emotions {footer="F. Schweitzer & D. Garcia, An agent-based model of collective emotions in online communities, Eur. Phys. J. B (2010)"}
 
 :::: {.columns}
-::: {.column width="52%"}
-![](figures/ABM.svg){width="100%" fig-align="center"}
+::: {.column width="50%"}
+![](figures/ABM.svg){fig-align="center"}
 :::
-::: {.column width="48%"}
-- **Macro:** collective emotions — waves of shared affect that rise, spread, and fade across a community
+::: {.column width="50%"}
+- **Macro:** collective emotions — shared affect that rises, spreads, and fades across a community
 - **Micro:** individuals feeling, expressing, and reacting to each other's emotions
-- The **gap:** how do individual emotional dynamics *add up* to collective patterns?
+- The **gap:** how do individual dynamics *add up* to collective patterns?
 
-::: {.takeaway}
-**Agent-based modelling** links micro-level rules to macro-level phenomena — but it needs a way to *measure* emotions at both levels.
-:::
+**Agent-based modelling** links the two — but we must *measure* emotions at both levels:
+
+- **Microscopic** → a single text: **LEIA**
+- **Macroscopic** → a whole society: **macroscopes**
 :::
 ::::
-
-## Two measurement problems
-
-To close the micro–macro gap, we need to measure emotions at two levels:
-
-- **Microscopic** — detect the emotion of a *single* text as accurately as possible → **LEIA**
-- **Macroscopic** — track the emotional state of a *whole society* over time → **social media macroscopes**
-
-We first look at the microscope, then the macroscope, then a real collective-emotion event: the **Paris attacks of 2015**.
 
 # 2a. Microscopic measurement: LEIA {.divider}
 
 ## The state-of-the-practice sentiment pipeline {footer="LEIA: Linguistic Embeddings for the Identification of Affect · Aroyehun et al., EPJ Data Science (2023)"}
 
 :::: {.columns}
-::: {.column width="55%"}
-![](figures/SA-pipeline.png){width="100%" fig-align="center"}
+::: {.column width="52%"}
+![](figures/SA-pipeline.png){fig-align="center"}
 :::
-::: {.column width="45%"}
+::: {.column width="48%"}
 - Current sentiment analysis assumes the **ground truth** is an annotation by **a reader** — a student or crowdworker
 - Noise in the ground truth creates **unmeasured error** and potential biases
 - Can we learn emotions from how people **label their own** feelings?
@@ -110,13 +119,13 @@ We first look at the microscope, then the macroscope, then a real collective-emo
 ## Vent + LEIA: learning self-annotated emotions {footer="LEIA: Linguistic Embeddings for the Identification of Affect · Aroyehun et al., EPJ Data Science (2023)"}
 
 :::: {.columns}
-::: {.column width="48%"}
+::: {.column width="46%"}
 **Vent**: a social network where users tag each post with their own emotion — self-annotated affect at scale (>6M training posts).
 
 **LEIA** — Linguistic Embeddings for the Identification of Affect: a transformer fine-tuned on Vent for Sadness, Anger, Fear, Affection, Happiness.
 :::
-::: {.column width="52%"}
-![](figures/LEIA-Schema.png){width="100%" fig-align="center"}
+::: {.column width="54%"}
+![](figures/LEIA-Schema.png){fig-align="center"}
 :::
 ::::
 
@@ -124,7 +133,7 @@ We first look at the microscope, then the macroscope, then a real collective-emo
 
 :::: {.columns}
 ::: {.column width="55%"}
-![](figures/LEIA1.svg){width="100%" fig-align="center"}
+![](figures/LEIA1.svg){fig-align="center"}
 :::
 ::: {.column width="45%"}
 - LEIA beats supervised **and** unsupervised methods for **all emotions** and **all test sets**
@@ -151,7 +160,7 @@ A small fine-tuned model **greatly outperforms** GPT-3.5 and GPT-4 on this domai
 ## LEIA vs. humans {footer="LEIA vs. humans — C. Metz, MSc thesis, University of Konstanz (in preparation, unpublished)"}
 
 :::: {.columns}
-::: {.column width="46%"}
+::: {.column width="44%"}
 Full experiment on Prolific:
 
 - 1,000 Vent posts, **5 annotations each**, 200 participants
@@ -159,25 +168,25 @@ Full experiment on Prolific:
 - **LEIA significantly outperforms humans**
 - **Only 13%** of annotators do better than LEIA
 - Humans given LEIA improve — but stay below LEIA alone
+
+::: {.muted style="font-size:0.7em"}
+Results still to be published (C. Metz, master thesis).
 :::
-::: {.column width="54%"}
-![](figures/LEIAvsHumans2.png){width="100%" fig-align="center"}
+:::
+::: {.column width="56%"}
+![](figures/LEIAvsHumans2.png){fig-align="center"}
 :::
 ::::
-
-::: {.muted style="font-size:0.6em"}
-Note: the human-comparison results are still to be published (Claire's master thesis).
-:::
 
 # 2b. Macroscopic measurement of emotions online {.divider}
 
 ## Do social media macroscopes work? {footer="Social media emotion macroscopes reflect emotional experiences in society at large · Garcia et al., arXiv:2107.13236 (2021)"}
 
 :::: {.columns}
-::: {.column width="45%"}
-![](figures/earth.svg){width="80%" fig-align="center"}
+::: {.column width="42%"}
+![](figures/earth.svg){fig-align="center"}
 :::
-::: {.column width="55%"}
+::: {.column width="58%"}
 A **macroscope** aggregates millions of texts into a daily emotional signal for a whole society. Four concerns:
 
 1. Representation issues
@@ -195,16 +204,26 @@ A **macroscope** aggregates millions of texts into a daily emotional signal for 
 
 Twitter emotion time series track UK YouGov mood surveys (sadness, anxiety, joy), $r \approx 0.65$.
 
+## Twitter and surveys move together {footer="Social media emotion macroscopes reflect emotional experiences in society at large · Garcia et al., arXiv:2107.13236 (2021)"}
+
+![](figures/Sadness.svg){.tsstack fig-align="center"}
+
+![](figures/Anxiety.svg){.tsstack fig-align="center"}
+
+::: {.center .smaller}
+The macroscope series (blue) closely follow the **YouGov survey** series (red) — day-to-day agreement, not just monthly averages.
+:::
+
 ## Conceptual validation: COVID-19 and emotions {footer="Validating daily social media macroscopes of emotions · Pellert et al., Scientific Reports (2022)"}
 
 :::: {.columns}
-::: {.column width="52%"}
+::: {.column width="50%"}
 - Austrian daily macroscope: Der Standard forum + Austrian tweets, validated against a 20-day emotion survey (N=268,128)
 - **Conceptual validation**: COVID case numbers should elicit negative emotional experiences
 - Comparable correlations for survey data and the Twitter macroscope
 :::
-::: {.column width="48%"}
-![](figures/DS31.svg){width="100%" fig-align="center"}
+::: {.column width="50%"}
+![](figures/DS31.svg){fig-align="center"}
 :::
 ::::
 
@@ -219,15 +238,15 @@ Macroscopes are **not representative samples**, but they are made of humans — 
 ## Emotional responses to collective traumas {footer="Collective Emotions and Social Resilience in the Digital Traces After a Terrorist Attack · Garcia & Rimé, Psychological Science (2019)"}
 
 :::: {.columns}
-::: {.column width="55%"}
+::: {.column width="52%"}
 **How do societies respond to traumatic events? Is there a social function of collective emotions?**
 
 - Emotional synchronization: simultaneous negative emotions
 - Collective emotion lasts **longer** than individual reactions
 - Those who participate show higher long-term **solidarity**
 :::
-::: {.column width="45%"}
-![](figures/Trauma.png){width="85%" fig-align="center"}
+::: {.column width="48%"}
+![](figures/Trauma.png){fig-align="center"}
 :::
 ::::
 
@@ -235,7 +254,7 @@ Macroscopes are **not representative samples**, but they are made of humans — 
 
 :::: {.columns}
 ::: {.column width="55%"}
-![](figures/ParisCase.png){width="100%" fig-align="center"}
+![](figures/ParisCase.png){fig-align="center"}
 :::
 ::: {.column width="45%"}
 - Focus on the Paris attacks of **Nov 13, 2015**
@@ -245,13 +264,19 @@ Macroscopes are **not representative samples**, but they are made of humans — 
 :::
 ::::
 
+## Evidence of collective emotions {footer="Collective Emotions and Social Resilience in the Digital Traces After a Terrorist Attack · Garcia & Rimé, Psychological Science (2019)"}
+
+![](figures/TS.png){.r-stretch fig-align="center"}
+
+A sharp spike in **negative affect** and **anxiety** right after the attack, decaying over the following weeks — a collective emotional response visible in the digital traces.
+
 ## Emotions and prosocial language {footer="Collective Emotions and Social Resilience in the Digital Traces After a Terrorist Attack · Garcia & Rimé, Psychological Science (2019)"}
 
 :::: {.columns}
-::: {.column width="45%"}
-![](figures/TS3.png){width="95%" fig-align="center"}
+::: {.column width="48%"}
+![](figures/TS3.png){fig-align="center"}
 :::
-::: {.column width="55%"}
+::: {.column width="52%"}
 Users split by emotional expression two weeks after the attacks:
 
 - **Social process** terms: very similar *before*, strong difference *after*, lasting **months**
@@ -279,9 +304,11 @@ Interactive visualization: <http://dgarcia.eu/ParisAttacks.html>
 
 Equipping agent-based models with **language** (LLMs) to simulate online social systems — a *wind tunnel* for social media.
 
-## An *in silico* approach: RAG, not LLM magic {footer="WHAT-IF · HORIZON project · dgarcia.eu"}
+## Generative ABM of online social media {footer="WHAT-IF · HORIZON project · dgarcia.eu"}
 
 ![](figures/InSilico.png){.r-stretch fig-align="center"}
+
+An *in silico* approach: agents ground their behavior in retrieved evidence (**RAG**) rather than relying on "LLM magic".
 
 ## The Collective Turing Test {footer="The Collective Turing Test: LLMs Can Generate Realistic Multi-User Discussions · Bouleimen et al., Scientific Reports (2026)"}
 
@@ -296,10 +323,10 @@ Not "can one bot fool one human?" but: **can a population of LLM agents reproduc
 ## Result: humans cannot tell the difference {footer="The Collective Turing Test: LLMs Can Generate Realistic Multi-User Discussions · Bouleimen et al., Scientific Reports (2026)"}
 
 :::: {.columns}
-::: {.column width="58%"}
-![](figures/CTT-Results.png){width="100%" fig-align="center"}
+::: {.column width="60%"}
+![](figures/CTT-Results.png){fig-align="center"}
 :::
-::: {.column width="42%"}
+::: {.column width="40%"}
 - Participants compare LLM-generated and human discussions
 - **~50% success rate** — indistinguishable from chance
 - LLMs (Llama 3) can generate **realistic multi-user discussions**
@@ -309,10 +336,10 @@ Not "can one bot fool one human?" but: **can a population of LLM agents reproduc
 ## AI4Social+: AI as an interpolator of behavior {footer="AI4SOCIAL+ · HORIZON project (BSC & University of Konstanz)"}
 
 :::: {.columns}
-::: {.column width="55%"}
-![](figures/AI4SOCIAL.svg){width="100%" fig-align="center"}
+::: {.column width="58%"}
+![](figures/AI4SOCIAL.svg){fig-align="center"}
 :::
-::: {.column width="45%"}
+::: {.column width="42%"}
 **AI4SOCIAL+**: new HORIZON project including **BSC** and **University of Konstanz**.
 
 Using generative agents to **interpolate** human behavior — filling gaps between what we can measure and what we want to understand.
@@ -325,7 +352,7 @@ Using generative agents to **interpolate** human behavior — filling gaps betwe
 
 :::: {.columns}
 ::: {.column width="55%"}
-![](figures/conformity1.png){width="100%" fig-align="center"}
+![](figures/conformity1.png){fig-align="center"}
 :::
 ::: {.column width="45%"}
 Classic **Asch-style** paradigm ported to AI agents:
@@ -340,7 +367,7 @@ Classic **Asch-style** paradigm ported to AI agents:
 
 :::: {.columns}
 ::: {.column width="55%"}
-![](figures/conformity2.png){width="100%" fig-align="center"}
+![](figures/conformity2.png){fig-align="center"}
 :::
 ::: {.column width="45%"}
 - AI agents conform **more than humans** (up to **100%** vs ~30%)
@@ -353,10 +380,10 @@ Classic **Asch-style** paradigm ported to AI agents:
 ## The Social LLM Hypothesis {footer="AI agents can coordinate beyond human scale · de Marzo, Castellano, Garcia, arXiv:2409.02822 (2025)"}
 
 :::: {.columns}
-::: {.column width="50%"}
-![](figures/DunbarQuestion.svg){width="100%" fig-align="center"}
+::: {.column width="52%"}
+![](figures/DunbarQuestion.svg){fig-align="center"}
 :::
-::: {.column width="50%"}
+::: {.column width="48%"}
 - Human group size depends on **cognitive ability** (Dunbar's number, 150–250)
 - Language is the tool that lets humans form larger groups
 
@@ -370,10 +397,10 @@ Classic **Asch-style** paradigm ported to AI agents:
 ## Coordination dynamics in LLM agents {footer="AI agents can coordinate beyond human scale · de Marzo, Castellano, Garcia, arXiv:2409.02822 (2025)"}
 
 :::: {.columns}
-::: {.column width="52%"}
-![](figures/OP.png){width="92%" fig-align="center"}
+::: {.column width="50%"}
+![](figures/OP.png){fig-align="center"}
 :::
-::: {.column width="48%"}
+::: {.column width="50%"}
 - N agents each start with a random opinion (**A / B**)
 - Each step, an agent sees all others' opinions and restates its own
 - Opinion labels are **shuffled** to avoid token biases
@@ -391,7 +418,7 @@ Some LLMs reach consensus even for **completely arbitrary** decisions (50 agents
 
 :::: {.columns}
 ::: {.column width="55%"}
-![](figures/Scaling.png){width="100%" fig-align="center"}
+![](figures/Scaling.png){fig-align="center"}
 :::
 ::: {.column width="45%"}
 - **Critical group size** $N_c$: above it, consensus becomes practically unreachable
@@ -407,10 +434,10 @@ LLM consensus can scale **beyond human** group sizes.
 ## AI swarms and collective misalignment {footer="How Malicious AI Swarms Can Threaten Democracy · Schroeder et al., Science (2026)"}
 
 :::: {.columns}
-::: {.column width="52%"}
-![](figures/AI-society-5.svg){width="100%" fig-align="center"}
+::: {.column width="54%"}
+![](figures/AI-society-5.svg){fig-align="center"}
 :::
-::: {.column width="48%"}
+::: {.column width="46%"}
 When agents **coordinate** and **conform**, individually aligned agents can drift into a **collectively misaligned** state.
 
 A new frontier of information warfare: coordinated **AI swarms** amplifying and synchronizing opinions.
@@ -420,10 +447,10 @@ A new frontier of information warfare: coordinated **AI swarms** amplifying and 
 ## Conformity generates collective misalignment {footer="Conformity Generates Collective Misalignment in AI Agent Societies · De Marzo et al., arXiv:2605.10721 (2026)"}
 
 :::: {.columns}
-::: {.column width="52%"}
-![](figures/Misalignment1.svg){width="100%" fig-align="center"}
+::: {.column width="54%"}
+![](figures/Misalignment1.svg){fig-align="center"}
 :::
-::: {.column width="48%"}
+::: {.column width="46%"}
 - Coordination paradigm on **real issues** (e.g. healthcare, taxation, immigration)
 - The model has a preferred option — but a committed initial majority can lock the group into the **opposite** state
 - **Spinodal** dynamics: a metastable collective state, misaligned from each agent's own preference
@@ -433,10 +460,10 @@ A new frontier of information warfare: coordinated **AI swarms** amplifying and 
 ## Moltbook: the "Reddit of AI agents" {footer="Collective Behavior of AI Agents: the Case of Moltbook · De Marzo & Garcia, arXiv:2602.09270 (2026)"}
 
 :::: {.columns}
-::: {.column width="45%"}
-![](figures/Moltbook.png){width="100%" fig-align="center"}
+::: {.column width="46%"}
+![](figures/Moltbook.png){fig-align="center"}
 :::
-::: {.column width="55%"}
+::: {.column width="54%"}
 - Do AI agents produce behavioral structures **similar to or different from** humans?
 - Do they influence each other under **natural diversity**?
 - A fully AI-populated social media platform as a natural experiment
@@ -446,19 +473,17 @@ A new frontier of information warfare: coordinated **AI swarms** amplifying and 
 ## Moltbook: similar structure, different behavior {footer="Collective Behavior of AI Agents: the Case of Moltbook · De Marzo & Garcia, arXiv:2602.09270 (2026)"}
 
 :::: {.columns}
-::: {.column width="50%"}
-![](figures/Moltbook1.png){width="100%" fig-align="center"}
+::: {.column width="58%"}
+![](figures/Moltbook1.png){fig-align="center"}
 
 **Similar:** power-law comment distributions (exponents 1.5–1.8) from proportional growth.
 :::
-::: {.column width="50%"}
-![](figures/Moltbook2.png){width="80%" fig-align="center"}
+::: {.column width="42%"}
+![](figures/Moltbook2.png){.figcap fig-align="center"}
 
 **Different:** humans prefer to **vote**; AI agents prefer to **discuss**.
 :::
 ::::
-
-# Summary {.divider}
 
 ## Summary {footer="www.dgarcia.eu · Bluesky @dgarcia.eu"}
 
@@ -471,4 +496,6 @@ A new frontier of information warfare: coordinated **AI swarms** amplifying and 
 From measuring human collective behavior to simulating it — and now to the collective behavior of AI itself.
 :::
 
-### Thank you! — david.garcia@uni-konstanz.de · [www.dgarcia.eu](https://dgarcia.eu)
+::: {.thankyou}
+**Thank you!** — david.garcia@uni-konstanz.de · [www.dgarcia.eu](https://dgarcia.eu)
+:::
