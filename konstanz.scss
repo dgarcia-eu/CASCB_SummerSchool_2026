@@ -116,7 +116,7 @@ $presentation-heading-color: $schwarz !default;
 .reveal .slide.divider h1,
 .reveal .slide.divider h2,
 .reveal .slide.divider h3 {
-  color: $karpfenblau;
+  color: $petrol;              // same as normal boldface text on slides
   font-weight: 800;
   border-bottom: none;
   display: inline-block;
@@ -250,6 +250,16 @@ $presentation-heading-color: $schwarz !default;
 
 // Stack of small figures in one column (Moltbook slide)
 .reveal img.stackfig { max-height: 190px !important; width: auto; display: block; margin: 0.15em auto; }
+.reveal img.stackfig-lg { max-height: 235px !important; width: 100% !important; object-fit: contain; display: block; margin: 0.15em auto; }
+
+// Force an image to fill the full width of its column (upscales small-intrinsic SVGs)
+.reveal .columns img.fillcol { width: 100% !important; height: auto !important; max-width: 100% !important; max-height: 610px !important; }
+
+// Left-aligned caption placed below a figure
+.reveal .capleft { font-size: 0.86em; text-align: left; margin-top: 0.3em; }
+
+// A vertical spacer above content
+.reveal .spacer-sm { height: 0.8em; }
 
 // --- Lab "About us" slide: just the full-bleed graphic, no title text ---
 .reveal .about-slide h2 { display: none; }

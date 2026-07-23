@@ -12,8 +12,8 @@ format:
     height: 720
     slide-number: c/t
     aspect-ratio: "16:9"
-    transition: fade
-    transition-speed: fast
+    transition: none
+    background-transition: none
     incremental: false
     fig-align: center
     link-external-newwindow: true
@@ -85,6 +85,9 @@ A **complex system** is composed of many particles that interact following force
 
 ## The micro–macro gap of collective emotions {footer="F. Schweitzer & D. Garcia, An agent-based model of collective emotions in online communities, Eur. Phys. J. B (2010)"}
 
+::: {.spacer-sm}
+:::
+
 :::: {.columns}
 ::: {.column width="50%"}
 ![](figures/ABM.svg){fig-align="center"}
@@ -121,7 +124,7 @@ A **complex system** is composed of many particles that interact following force
 
 ## Vent + LEIA: learning self-annotated emotions {footer="LEIA: Linguistic Embeddings for the Identification of Affect · Aroyehun et al., EPJ Data Science (2023)"}
 
-![](figures/LEIA-Schema.png){.figtop fig-align="center"}
+![](figures/LEIA-Schema.png){.bigfig fig-align="center"}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -190,12 +193,16 @@ Results still to be published, with Claire Jordan.
 ## Do social media macroscopes work? {footer="Social media emotion macroscopes reflect emotional experiences in society at large · Garcia et al., arXiv:2107.13236 (2021)"}
 
 :::: {.columns}
-::: {.column width="42%"}
-![](figures/earth.svg){fig-align="center"}
+::: {.column width="46%"}
+![](figures/earth.svg){.fillcol fig-align="center"}
 :::
-::: {.column width="58%"}
+::: {.column width="54%"}
 ::: {.roomy}
-A **macroscope** aggregates millions of texts into a daily emotional signal for a whole society. Four concerns:
+A **macroscope** aggregates millions of texts into a daily emotional signal for a whole society.
+
+<br>
+
+**Four concerns:**
 
 1. Representation issues
 2. Performative behavior
@@ -234,12 +241,10 @@ The macroscope series (blue) closely follow the **YouGov survey** series (red) �
 
 ## Take-home: online media for social sensing {footer="Using social media data to capture emotions before and during COVID-19 · Metzler, Pellert, Garcia, World Happiness Report (2022)"}
 
-![](figures/earth.svg){.magnifier fig-align="center"}
+![](figures/socialsensing.svg){.bigfig fig-align="center"}
 
-![](figures/takeHome.svg){fig-align="center"}
-
-::: {.center .smaller}
-Macroscopes are **not representative samples**, but they are made of humans — validated by *convergence* across independent measures rather than a single ground truth.
+::: {.takeaway}
+Despite important concerns about Computational Social Science methods (representativity, online behavior), **social media macroscopes of emotion can substantially agree with established social-science methods**.
 :::
 
 # 2c. The Paris attacks: collective emotions in action {.divider}
@@ -263,11 +268,10 @@ Macroscopes are **not representative samples**, but they are made of humans — 
 
 ## Twitter digital traces after the Paris attacks {footer="Collective Emotions and Social Resilience in the Digital Traces After a Terrorist Attack · Garcia & Rimé, Psychological Science (2019)"}
 
-![](figures/ParisCase.png){.figtop fig-align="center"}
+![](figures/ParisCase.png){.r-stretch fig-align="center"}
 
-::: {.belowtext}
-- Focus on the Paris attacks of **Nov 13, 2015** — removed bots, news media, organizations → **62,114 users**
-- Retrieved full user timelines → **>27 million tweets**; emotions measured with **LIWC** (validated dictionaries)
+::: {.center .smaller}
+Paris attacks of **Nov 13, 2015** — after removing bots, news media, and organizations: **62,114 users** and **>27 million tweets**, with emotions measured via **LIWC**.
 :::
 
 ## Evidence of collective emotions {footer="Collective Emotions and Social Resilience in the Digital Traces After a Terrorist Attack · Garcia & Rimé, Psychological Science (2019)"}
@@ -279,10 +283,10 @@ A sharp spike in **negative affect** and **anxiety** right after the attack, dec
 ## Emotions and prosocial language {footer="Collective Emotions and Social Resilience in the Digital Traces After a Terrorist Attack · Garcia & Rimé, Psychological Science (2019)"}
 
 :::: {.columns}
-::: {.column width="46%"}
-![](figures/TS3.png){.figcap fig-align="center"}
+::: {.column width="52%"}
+![](figures/TS3.png){fig-align="center"}
 :::
-::: {.column width="54%"}
+::: {.column width="48%"}
 Users split by emotional expression two weeks after the attacks:
 
 - **Social process** terms: very similar *before*, strong difference *after*, lasting **months**
@@ -291,22 +295,20 @@ Users split by emotional expression two weeks after the attacks:
 ::::
 
 ::: {.fullband .smaller}
-**Take-home:** terrorist attacks trigger **collective emotions** that increase **social-resilience** language — those with stronger emotions use more social, prosocial, and shared-value terms. Collective emotions are **not just venting**: they can keep us together (with negative sides too — inter-group conflict, intolerance, short-term orientation).
+**Take-home:** terrorist attacks trigger **collective emotions** that increase **social-resilience** language — those with stronger emotions use more social, prosocial, and shared-value terms.
 :::
 
 # 3. Generative Agents {.divider}
 
 ## WHAT-IF: social simulation with generative ABM {footer="WHAT-IF · HORIZON project · dgarcia.eu"}
 
-![](figures/WHAT-IF.svg){.r-stretch fig-align="center"}
+![](figures/WHAT-IF.png){.r-stretch fig-align="center"}
 
 Equipping agent-based models with **language** (LLMs) to simulate online social systems — a *wind tunnel* for social media.
 
 ## Generative ABM of online social media {footer="WHAT-IF · HORIZON project · dgarcia.eu"}
 
 ![](figures/InSilico.png){.r-stretch fig-align="center"}
-
-An *in silico* approach: agents ground their behavior in retrieved evidence (**RAG**) rather than relying on "LLM magic".
 
 ## The Collective Turing Test {footer="The Collective Turing Test: LLMs Can Generate Realistic Multi-User Discussions · Bouleimen et al., Scientific Reports (2026)"}
 
@@ -316,21 +318,23 @@ Not "can one bot fool one human?" but: **can a population of LLM agents reproduc
 
 ## Simulating a Reddit discussion {footer="The Collective Turing Test: LLMs Can Generate Realistic Multi-User Discussions · Bouleimen et al., Scientific Reports (2026)"}
 
-![](figures/CTT-Example.png){.r-stretch fig-align="center"}
+Consider the following Reddit post:
+
+![](figures/CTT-Example-card.png){.r-stretch fig-align="center"}
 
 ## Result: humans cannot tell the difference {footer="The Collective Turing Test: LLMs Can Generate Realistic Multi-User Discussions · Bouleimen et al., Scientific Reports (2026)"}
 
-![](figures/CTT-Results.png){.figtop fig-align="center"}
+![](figures/CTT-Results.png){.r-stretch fig-align="center"}
 
-::: {.belowtext .center}
+::: {.capleft}
 Participants compare LLM-generated and human discussions — a **~50% success rate**, indistinguishable from chance. LLMs (Llama 3) can generate **realistic multi-user discussions**.
 :::
 
 ## AI4Social+: AI as an interpolator of behavior {footer="AI4SOCIAL+ · HORIZON project (BSC & University of Konstanz)"}
 
-![](figures/AI4SOCIAL.svg){.figtop fig-align="center"}
+![](figures/AI4SOCIAL.svg){.r-stretch fig-align="center"}
 
-::: {.belowtext .center}
+::: {.capleft}
 **AI4SOCIAL+**: a new HORIZON project including **BSC** and **University of Konstanz** — using generative agents to **interpolate** human behavior, filling the gaps between what we can measure and what we want to understand.
 :::
 
@@ -341,7 +345,9 @@ Participants compare LLM-generated and human discussions — a **~50% success ra
 ![](figures/conformity1.png){.figtop fig-align="center"}
 
 ::: {.belowtext}
-Classic **Asch-style** paradigm ported to AI agents: others around choose a wrong line, color, or count; one option is clearly wrong, so the **base error rate is zero**. Social Impact Theory: conformity grows with the **number**, **similarity**, and **social strength** of sources.
+- Classic **Asch-style** paradigm ported to AI agents: others around choose a wrong line, color, or count
+- One option is clearly wrong → the **base error rate is zero**
+- Social Impact Theory: conformity grows with the **number**, **similarity**, and **social strength** of sources
 :::
 
 ## AI agents conform more than humans {footer="Conformity and Social Impact on AI Agents · Bellina, De Marzo, Garcia, arXiv:2601.05384 (2026)"}
@@ -367,7 +373,7 @@ Classic **Asch-style** paradigm ported to AI agents: others around choose a wron
 
 :::: {.columns}
 ::: {.column width="56%"}
-![](figures/DunbarQuestion.svg){fig-align="center"}
+![](figures/DunbarQuestion.svg){.fillcol fig-align="center"}
 :::
 ::: {.column width="44%"}
 ::: {.roomy}
@@ -386,11 +392,11 @@ Classic **Asch-style** paradigm ported to AI agents: others around choose a wron
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](figures/OP.svg){fig-align="center"}
+![](figures/OP.svg){.fillcol fig-align="center"}
 :::
 ::: {.column width="50%"}
 ::: {.roomy}
-- N agents each start with a random opinion (**A / B**)
+- N agents each start with a random opinion (**X / Y**)
 - Each step, an agent sees all others' opinions and restates its own
 - Opinion labels are **shuffled** to avoid token biases
 - **Consensus** = everyone ends up agreeing
@@ -423,17 +429,17 @@ LLM consensus can scale **beyond human** group sizes.
 
 ## AI swarms and collective misalignment {footer="How Malicious AI Swarms Can Threaten Democracy · Schroeder et al., Science (2026)"}
 
-![](figures/AI-society-5.svg){.figtop fig-align="center"}
+![](figures/AI-society-5.svg){.r-stretch fig-align="center"}
 
-::: {.belowtext .center}
+::: {.capleft}
 When agents **coordinate** and **conform**, individually aligned agents can drift into a **collectively misaligned** state — a new frontier of information warfare: coordinated **AI swarms** amplifying and synchronizing opinions.
 :::
 
 ## Conformity generates collective misalignment {footer="Conformity Generates Collective Misalignment in AI Agent Societies · De Marzo et al., arXiv:2605.10721 (2026)"}
 
-![](figures/Misalignment1.svg){.figtop fig-align="center"}
+![](figures/Misalignment1.svg){.r-stretch fig-align="center"}
 
-::: {.belowtext}
+::: {.capleft}
 - Coordination paradigm on **real issues** (e.g. healthcare, taxation, immigration)
 - The model has a preferred option — but a committed initial majority can lock the group into the **opposite** state
 - **Spinodal** dynamics: a metastable collective state, misaligned from each agent's own preference
@@ -452,15 +458,15 @@ When agents **coordinate** and **conform**, individually aligned agents can drif
 ## Moltbook: similar structure, different behavior {footer="Collective Behavior of AI Agents: the Case of Moltbook · De Marzo & Garcia, arXiv:2602.09270 (2026)"}
 
 :::: {.columns}
-::: {.column width="58%"}
-![](figures/Moltbook1.png){.stackfig fig-align="center"}
+::: {.column width="62%"}
+![](figures/Moltbook1.png){.stackfig-lg fig-align="center"}
 
-![](figures/Moltbook2.png){.stackfig fig-align="center"}
-
-![](figures/Moltbook3.png){.stackfig fig-align="center"}
+![](figures/Moltbook3.png){.stackfig-lg fig-align="center"}
 :::
-::: {.column width="42%"}
-::: {.roomy}
+::: {.column width="38%"}
+![](figures/Moltbook2.png){.stackfig-lg fig-align="center"}
+
+::: {.smaller}
 - **Similar:** power-law comment distributions (exponents 1.5–1.8) from proportional growth
 - **Different:** humans prefer to **vote**; AI agents prefer to **discuss**
 - Fast **novelty decay**, like human platforms
@@ -480,5 +486,5 @@ From measuring human collective behavior to simulating it — and now to the col
 :::
 
 ::: {.thankyou}
-**Thank you!** — david.garcia@uni-konstanz.de · [www.dgarcia.eu](https://dgarcia.eu) · Bluesky: [@dgarcia.eu](https://bsky.app/profile/dgarcia.bsky.social)
+**Thank you!** — [www.dgarcia.eu](https://dgarcia.eu) · Bluesky: [@dgarcia.eu](https://bsky.app/profile/dgarcia.bsky.social)
 :::
