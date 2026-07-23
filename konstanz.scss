@@ -108,21 +108,22 @@ $presentation-heading-color: $schwarz !default;
 // ==========================================================================
 //  Section-divider slides (class .divider on a heading)
 // ==========================================================================
-// Deep Karpfenblau background gives white section titles strong contrast.
-.reveal .slide.divider {
-  background: $karpfenblau;
-}
+// Section dividers: white background with bold Karpfenblau title + Seeblau accent bar.
 .reveal section.divider,
 .reveal .slide.divider {
-  background: $karpfenblau;
+  background: $weiss;
 }
 .reveal .slide.divider h1,
 .reveal .slide.divider h2,
 .reveal .slide.divider h3 {
-  color: $weiss;
+  color: $karpfenblau;
+  font-weight: 800;
   border-bottom: none;
+  display: inline-block;
+  padding-bottom: 0.2em;
+  border-bottom: 6px solid $seeblau;
 }
-.reveal .slide.divider p { color: rgba($weiss, 0.92); }
+.reveal .slide.divider p { color: $petrol; }
 
 // ==========================================================================
 //  Per-slide footer (paper citation)  &  slide number
@@ -222,8 +223,33 @@ $presentation-heading-color: $schwarz !default;
 // text stays on the slide.
 .reveal .columns img.figcap { max-height: 400px !important; }
 
-// Two wide time-series plots stacked to fill vertical space (slide 20)
-.reveal img.tsstack { max-height: 262px !important; width: auto; display: block; margin: 0.15em auto; }
+// Two wide time-series plots stacked to fill vertical space (slide 20).
+// These SVGs have tiny intrinsic (mm) sizes, so we must force width to upscale.
+.reveal img.tsstack { width: 70% !important; height: auto !important; max-height: none !important; display: block; margin: 0.15em auto; }
+
+// "Big centered figure on top, text below" pattern (figure-forward slides)
+.reveal img.bigfig  { max-height: 460px !important; width: auto; display: block; margin: 0 auto 0.3em; }
+.reveal img.figtop  { max-height: 410px !important; width: auto; display: block; margin: 0 auto 0.3em; }
+.reveal img.tallfig { max-height: 630px !important; width: auto; display: block; margin: 0 auto; }
+.reveal img.magnifier { max-height: 320px !important; width: auto; display: block; margin: 0 auto 0.25em; }
+
+// Text placed below a top figure — keep it compact and centered
+.reveal .belowtext { font-size: 0.86em; }
+.reveal .belowtext.center, .reveal .belowtext .center { text-align: center; }
+
+// Wider, roomier bullet spacing for text columns that need to fill height
+.reveal .roomy li { margin-bottom: 0.75em; line-height: 1.45; }
+.reveal .roomy { font-size: 1.06em; }
+
+// Full-width band under a two-column row (used on the micro–macro slide)
+.reveal .fullband { margin-top: 0.4em; font-size: 1.02em; }
+
+// Larger table with more vertical breathing room (slide 15)
+.reveal .bigtable table { font-size: 1.02em; }
+.reveal .bigtable table th, .reveal .bigtable table td { padding: 0.42em 0.75em; }
+
+// Stack of small figures in one column (Moltbook slide)
+.reveal img.stackfig { max-height: 190px !important; width: auto; display: block; margin: 0.15em auto; }
 
 // --- Lab "About us" slide: just the full-bleed graphic, no title text ---
 .reveal .about-slide h2 { display: none; }
